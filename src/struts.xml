@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE struts PUBLIC  
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"  
+    "http://struts.apache.org/dtds/struts-2.0.dtd">  
+  
+<struts>  
+	<constant name="struts.devMode" value="true"/>
+    <package name="namespace" extends="struts-default">  
+    
+<!--     测试用 -->
+        <action name="HelloWorld" class="com.mystruts.action.HelloWorld">  
+            <result name="success">/HelloWorld.jsp</result>  
+        </action>      
+<!-- ———————————————————————————————————————————————————————————————— -->
+         
+<!-- 		展示一个作者的所有的书 -->
+        <action name="query" class="com.action.back">
+        	<result name="success">
+        		/find.jsp
+        	</result>
+        </action>
+        
+        <action name="find" class="com.action.find">
+  			<result name="success">
+  				/success.jsp
+  			</result>
+  			<result name="fail">
+  				/fail.jsp
+  			</result>
+        </action>
+<!--  ———————————————————————————————————————————————————————————————————————— -->
+
+<!-- 	展示一本书的详细情况 -->
+   		<action name="show" class="com.action.show">
+  			<result name="success">
+  				/show.jsp
+  			</result>
+        </action>
+<!-- —————————————————————————————————————————————————————————————————————————————————————— -->
+    	
+<!--     	删除一本书 -->
+    	<action name="delete" class="com.action.delete">
+    		<result name="success">
+    			/yes.jsp
+    		</result>
+    	</action>
+<!--  ——————————————————————————————————————————————————————————————————————————————————————   	 -->
+    	
+    	
+<!--     	返回主页的操作 -->
+       <action name="back" class="com.action.back">
+  			<result name="success">
+  				/index.jsp
+  			</result>
+        </action>
+<!--  ————————————————————————————————————————————————————————————————————————————————-   	 -->
+    	
+<!--     	执行往数据库里增加数据的操作 -->
+    	
+    	<action name="input" class="com.action.back">
+    		<result name="success">
+    			/input.jsp
+    		</result>
+    	</action>
+    	
+    	<action name="add" class="com.action.add">
+    		<result name="no">
+    			/fail.jsp
+    		</result>
+    		<result name="success">
+    			/yes.jsp
+    		</result>
+    		
+    		<result name="fail">
+    			/input_au.jsp
+    		</result>
+    	</action>
+    	
+    	<action name="add_au" class="com.action.add_au">
+    		<result name="success">
+    			/yes.jsp
+    		</result>
+    	</action>
+<!-- —————————————————————————————————————————————————————————————————————————————————— -->
+
+<!--  	展示所有书籍 -->
+    	<action name="showallbook" class="com.action.showallbook">
+    		<result name="success">
+    			/showallbook.jsp
+    		</result>
+    	</action>
+<!--    ———————————————————————————————————————————————————————————————————————— -->
+
+<!-- 		展示所有作者 -->
+		<action name="showallauthor" class="com.action.showallauthor">
+    		<result name="success">
+    			/showallauthor.jsp
+    		</result>
+    	</action>
+<!-- ———————————————————————————————————————————————————————————————————————————————————————————— -->
+    </package>  
+</struts>  
